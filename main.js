@@ -53,11 +53,15 @@ function getIssues() {
 			var numberOfIssues = JSONresp.total;
 
 			if (numberOfIssues > 0) {
-				var maxTs = _(JSONresp.issues).pluck('fields').pluck('updated').max(function (sDate) { return +(new Date(sDate)); } );
+				var issues = JSONresp.issues;
+
+				issues = _.sortBy(issues, 'fields.updated');
+
+				var maxTs = _(issues).pluck('fields').pluck('updated').max(function (sDate) { return +(new Date(sDate)); } );
 
 				console.log(chalk.bold.red('\n\n\n' + numberOfIssues + ' issues updated since ' + moment(lastIssueTs).format('DD/MM HH:mm:ss')));
 
-				_.forEach(JSONresp.issues, displayIssueDetails);
+				_.forEach(issues, displayIssueDetails);
 				if (maxTs) {
 					lastIssueTs = moment(maxTs).valueOf() + 60000;
 				}
