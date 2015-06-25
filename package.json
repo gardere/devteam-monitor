@@ -1,0 +1,16 @@
+{
+  "name": "devteambot",
+  "version": "1.0.0",
+  "description": "A Bot monitoring Dev Team activity",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mathieu Gardere",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "lodash": "^3.9.3",
+    "moment": "^2.10.3"
+  }
+}
