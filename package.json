@@ -4,7 +4,8 @@
   "description": "A Bot monitoring Dev Team activity",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "install.js"
   },
   "author": "Mathieu Gardere",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "moment": "^2.10.3",
     "nodegit": "^0.4.1",
     "q": "^1.4.1",
+    "readline": "0.0.8",
     "sqlite3": "^3.0.8"
   }
 }
